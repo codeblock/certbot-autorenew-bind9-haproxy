@@ -64,9 +64,9 @@ on self-managed Domain Name Server
 
 ```
 
-## Usage
+## Parameters
 
-domainset=domain`:`port`,`paddingdays`,`mail_from`,`mail_to
+domainset=domain:port`,`paddingdays`,`mail_from`,`mail_to
 
 domainsets="domainset`;`domainset`;`..."
 
