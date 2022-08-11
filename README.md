@@ -32,10 +32,10 @@ on self-managed Domain Name Server
 3. `certbot` calls each script by their own step
 
     1. `/etc/letsencrypt/renewal-hooks/pre/manual-auth-bind9.sh`
-        - fetch and overwrite TXT record to zone file of domain after the certbot's dns-challenge
+        - fetch and append TXT record to zone file of domain after the certbot's dns-challenge
         - certbot be reading it after reloading bind9 for applying that
     2. `/etc/letsencrypt/renewal-hooks/post/manual-cleanup-bind9.sh`
-        - revert the overwrited TXT record from zone file of domain
+        - revert the appended TXT record from zone file of domain
     3. `/etc/letsencrypt/renewal-hooks/deploy/deploy-haproxy.sh`
         - copy the created key file to haproxy configuration directory (OR other Load Balancer OR other Server that reads key file)
         - reloading haproxy (OR other Load Balancer OR other Server that reads key file)
