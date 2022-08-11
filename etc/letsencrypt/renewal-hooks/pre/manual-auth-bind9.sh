@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ../common/includes.sh
+. $(dirname $(dirname $(realpath $0)))/common/includes.sh
 
 ########################################################################
 # # source
@@ -25,7 +25,7 @@ function main() {
     local record=$(get_record_txt $CERTBOT_DOMAIN $CERTBOT_VALIDATION)
     local filepath=$(get_filepath_zone $CERTBOT_DOMAIN)
     echo $record >> $filepath
-    service bind9 reload
+    reload_dns
 }
 
 main

@@ -10,7 +10,7 @@ on self-managed Domain Name Server
 
 -   Each \*.sh script need a execution permission (0755)
 -   Tested all applications in one Server (may be changed on your needs)
--   You may need to modify service, commands, service names, and paths to suit your needs (`/etc/letsencrypt/renewal-hooks/*`)
+-   You may need to modify service, commands, service names, and paths to suit your needs (`/etc/letsencrypt/renewal-hooks/common/includes.sh`)
     -   `/var/cache/bind/db.$domain.zone`
     -   `/etc/haproxy/certs/fullchain.pem`
     -   `service haproxy reload`
@@ -33,8 +33,7 @@ on self-managed Domain Name Server
 
     1. `/etc/letsencrypt/renewal-hooks/pre/manual-auth-bind9.sh`
         - fetch and overwrite TXT record to zone file of domain after the certbot's dns-challenge
-        - reloading bind9 for applying that
-        - certbot be reading it
+        - certbot be reading it after reloading bind9 for applying that
     2. `/etc/letsencrypt/renewal-hooks/post/manual-cleanup-bind9.sh`
         - revert the overwrited TXT record from zone file of domain
     3. `/etc/letsencrypt/renewal-hooks/deploy/deploy-haproxy.sh`

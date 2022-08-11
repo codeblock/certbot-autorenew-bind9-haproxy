@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ../common/includes.sh
+. $(dirname $(dirname $(realpath $0)))/common/includes.sh
 
 ########################################################################
 # # source

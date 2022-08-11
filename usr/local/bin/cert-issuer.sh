@@ -18,6 +18,7 @@ function main() {
         --manual-auth-hook /etc/letsencrypt/renewal-hooks/pre/manual-auth-bind9.sh \
         --manual-cleanup-hook /etc/letsencrypt/renewal-hooks/post/manual-cleanup-bind9.sh \
         --deploy-hook /etc/letsencrypt/renewal-hooks/deploy/deploy-haproxy.sh \
+        --no-directory-hooks \
         --preferred-challenges dns \
         -m "$email" \
         -d "*.$domain" -d "$domain"
